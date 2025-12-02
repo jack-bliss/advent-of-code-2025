@@ -1,13 +1,9 @@
-mod day_1;
-use day_1::apply_turns;
+// mod day_1;
+mod day_2;
 
 fn main() {
-    match apply_turns() {
-        Ok(result) => {
-            println!("{}", result);
-        }
-        Err(e) => {
-            eprintln!("Error: {}", e);
-        }
+    match day_2::sum_invalid_ids() {
+        Ok(total) => println!("Sum of Invalid IDs: {}", total),
+        Err(e) => eprintln!("Error processing invalid IDs: {}", e),
     }
 }
