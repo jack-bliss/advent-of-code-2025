@@ -1,11 +1,17 @@
-use crate::day_3::find_total_max_joltage;
+use crate::day_4::count_rolls_touching_at_most;
 
-// mod day_1;
-// mod day_2;
+#[allow(dead_code)]
+mod day_1;
+#[allow(dead_code)]
+mod day_2;
+#[allow(dead_code)]
 mod day_3;
+#[allow(dead_code)]
+mod day_4;
+
 fn main() {
-    match find_total_max_joltage(12) {
-        Ok(total) => println!("Total max joltage: {total}"),
-        Err(error) => eprintln!("{:?}", error),
+    match count_rolls_touching_at_most() {
+        Ok(total) => println!("{}", total),
+        Err(error) => println!("File read error: {}", error),
     }
 }
