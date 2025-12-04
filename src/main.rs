@@ -1,9 +1,11 @@
-// mod day_1;
-mod day_2;
+use crate::day_3::find_total_max_joltage;
 
+// mod day_1;
+// mod day_2;
+mod day_3;
 fn main() {
-    match day_2::sum_invalid_ids() {
-        Ok(total) => println!("Sum of Invalid IDs: {}", total),
-        Err(e) => eprintln!("Error processing invalid IDs: {}", e),
+    match find_total_max_joltage(12) {
+        Ok(total) => println!("Total max joltage: {total}"),
+        Err(error) => eprintln!("{:?}", error),
     }
 }
