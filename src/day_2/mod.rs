@@ -1,6 +1,6 @@
 use std::fs;
 
-mod range;
+pub mod range;
 
 use range::Range;
 

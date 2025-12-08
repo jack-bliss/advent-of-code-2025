@@ -1,4 +1,4 @@
-use crate::day_4::count_rolls_touching_at_most;
+use crate::{day_5::count_fresh_ingredients, day_6::solve_equations};
 
 #[allow(dead_code)]
 mod day_1;
@@ -8,10 +8,11 @@ mod day_2;
 mod day_3;
 #[allow(dead_code)]
 mod day_4;
+#[allow(dead_code)]
+mod day_5;
+// #[allow(dead_code)]
+mod day_6;
 
 fn main() {
-    match count_rolls_touching_at_most() {
-        Ok(total) => println!("{}", total),
-        Err(error) => println!("File read error: {}", error),
-    }
+    println!("{:?}", solve_equations());
 }

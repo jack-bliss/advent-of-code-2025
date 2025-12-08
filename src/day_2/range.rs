@@ -47,10 +47,22 @@ impl Display for RangeParseError {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone, PartialEq)]
 pub struct Range {
-    start: i64,
-    end: i64,
+    pub start: i64,
+    pub end: i64,
+}
+
+impl Range {
+    pub fn of(start: i64, end: i64) -> Self {
+        Range { start, end }
+    }
+}
+
+impl Display for Range {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}-{}", self.start, self.end)
+    }
 }
 
 fn is_repeated_n_times(str: &str, substr: &str, n: usize) -> bool {
@@ -88,11 +100,11 @@ impl Range {
     }
 }
 
-impl Display for Range {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "{}-{}", self.start, self.end)
-    }
-}
+// impl Display for Range {
+//     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+//         write!(f, "{}-{}", self.start, self.end)
+//     }
+// }
 
 impl TryFrom<&str> for Range {
     type Error = RangeParseError;
